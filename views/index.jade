@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div(class="row")
+      div(class="container")
+        h1 List of issues on Repo
+        div(id="issue-list")
+          for data in issues
+            .card.card-1(id="#{data.id}")
+              .header
+                span #{data.title} 
+                p(class="commit-new")
+                  span(class="number") 0 
+                  span &nbsp new comment
+                p(class="commit-old")
+                  span(class="number-old") 0 
+                  span &nbsp deleted comment
+              div
+                p(class="message") #{data.body}
+                p(class="others")
+                  a(href="#{data.html_url}") #{data.html_url}
+                p(class="others") Number of comment: &nbsp
+                  span(class="commit-number") #{data.comments}
+                p(class="others") Date Created: #{data.created_at}
+                p(class="others") Date Updated: #{data.updated_at}
