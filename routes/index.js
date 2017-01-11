@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   request(
     {
       url: url,
-      headers: {
+        headers: {
         'User-Agent': 'request'
       }
     }, function (error, response, body) {

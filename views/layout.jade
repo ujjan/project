@@ -109,7 +109,7 @@ html
 
     }
 
-    var socket = io.connect('https://55ab0b8f.ngrok.io');
+    var socket = io.connect('http://3058b738.ngrok.io');
     socket.on('new-issue', function (data) {
       if(data.action ===  'opened' || data.action=== 'reopened') {
         updateDom(data);
